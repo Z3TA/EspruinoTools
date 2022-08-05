@@ -447,15 +447,15 @@ while (d!==undefined) {console.log(btoa(d));d=f.read(${CHUNKSIZE});}
             if (xhr.status === 200) {
               callback(xhr.response.toString());
             } else {
-              console.error("getURL("+JSON.stringify(url)+") error : HTTP "+xhr.status);
+              console.error("getURL("+JSON.stringify(resultUrl)+") error : HTTP "+xhr.status);
               callback(undefined);
             }
           });
           xhr.addEventListener("error", function (e) {
-            console.error("getURL("+JSON.stringify(url)+") error "+e);
+            console.error("getURL("+JSON.stringify(resultUrl)+") error "+e);
             callback(undefined);
           });
-          xhr.open("GET", url, true);
+          xhr.open("GET", resultUrl, true);
           xhr.send(null);
         } else {
           // Node.js
